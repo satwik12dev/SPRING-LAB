@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- CPU Bean -->
+    <bean class="com.naresh.cpu" id="cpu">
+        <property name="cpuName" value="Intel i9"/>
+    </bean>
+    <bean class="com.naresh.Keyboard" id="keybard">
+        <property name="Keyboard" value="RGB"/>
+    </bean>
+    <bean class="com.naresh.Mouse" id="mouse">
+        <property name="Mouse" value="Logitech"/>
+    </bean>
+    <bean class="com.naresh.Disk" id="Disk">
+        <property name="disk" value="SSD-SODIM-3200-MT/s"/>
+    </bean>
+    <!-- Laptop Bean -->
+    <bean class="com.naresh.Laptop" id="laptop">
+        <property name="cpu" ref="cpu"/>
+        <property name="kyc" ref="keybard"/>
+        <property name="mouse" ref="mouse"/>
+        <property name="disk" ref="Disk"/>
+    </bean>
+
+
+</beans>
