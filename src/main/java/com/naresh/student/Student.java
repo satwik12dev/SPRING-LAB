@@ -1,0 +1,17 @@
+package com.naresh.student;
+
+public class Student{
+    private  int rollno;
+    private String name;
+    private String address;
+
+    public Student(int rollno, String name, String address) {
+        this.rollno = rollno;
+        this.name = name;
+        this.address = address;
+    }
+
+    public void dis(){
+        System.out.println(rollno+" "+name+" "+address);
+    }
+}
