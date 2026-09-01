@@ -10,6 +10,8 @@ public class App {
 //        paymentMethod.paymentSuccessful();
         Student stu = (Student) context.getBean("student");
         stu.dis();
-
+        stu.partdis();
+        stu.isSubjectAvailable();
+        stu.isStudentAvailable();
     }
 }

@@ -1,18 +1,14 @@
-package com.naresh;
+package com.naresh.College;
 
+import com.naresh.PaymentMethod;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main( String[] args ){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        PaymentMethod paymentMethod = (PaymentMethod) context.getBean("UPI");
-        paymentMethod.paymentSuccessful();
-
+        College cld = (College) context.getBean("College");
+        cld.display();
 
     }
 }
