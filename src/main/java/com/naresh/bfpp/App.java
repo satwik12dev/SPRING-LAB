@@ -1,13 +1,13 @@
-package com.naresh.College;
+package com.naresh.bfpp;
 
+import com.naresh.properties.DbUserDetails;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main( String[] args ){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        College cld = (College) context.getBean("College");
-        cld.display();
-
+        User user =(User) context.getBean("users");
+        user.dis();
     }
 }

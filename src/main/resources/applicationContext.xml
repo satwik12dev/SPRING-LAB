@@ -2,21 +2,29 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- CPU -->
     <bean class="com.naresh.UpiPaymentMethod" id="UPI"/>
 
 
+    <!-- GPU -->
     <bean class="com.naresh.GPU.AMD" id="AMD"/>
     <bean class="com.naresh.GPU.NVIDIA" id="NVIDIA"/>
     <bean class="com.naresh.GPU.Intel" id="INTEL"/>
 
+
+    <!-- Student -->
     <bean class="com.naresh.student.Student" id="student">
+
         <property name="details">
             <list>
+
                 <list>
                     <value>Name: Satwik</value>
                     <value>Course: BTech CSE IBM</value>
@@ -30,15 +38,19 @@
                     <value>Email: sanya@gmail.com</value>
                     <value>Mob No.: 9876543210</value>
                 </list>
+
                 <list>
                     <value>Name: Rahul</value>
                     <value>Course: BTech CSE</value>
                     <value>Email: rahul@gmail.com</value>
                     <value>Mob No.: 9876543211</value>
                 </list>
+
             </list>
         </property>
 
+
+        <!-- Subjects -->
         <property name="subjects">
             <set>
                 <value>Spring</value>
@@ -50,6 +62,8 @@
             </set>
         </property>
 
+
+        <!-- Marks -->
         <property name="Marks">
             <map>
                 <entry key="Spring" value="98"/>
@@ -61,6 +75,9 @@
         </property>
 
     </bean>
+
+
+    <!-- Student 2 -->
 
     <bean class="com.naresh.Student2.StudentName" id="studentName">
         <property name="name" value="Satwik"/>
@@ -79,6 +96,8 @@
         <property name="courseName" value="BTech CSE IBM"/>
     </bean>
 
+
+    <!-- Student Subjects -->
     <bean class="com.naresh.Student2.StudentSubject" id="studentSubject">
         <property name="subject">
             <array>
@@ -91,6 +110,8 @@
         </property>
     </bean>
 
+
+    <!-- Student CGPA -->
     <bean class="com.naresh.Student2.StudentCGPA" id="StudentCgpa">
         <property name="cgpaSemWise">
             <array>
@@ -104,13 +125,43 @@
         </property>
     </bean>
 
+
+    <!-- ABC ID -->
     <bean class="com.naresh.Student2.StudentABCId" id="StudentABCId">
         <property name="ABCId" value="8652356123"/>
     </bean>
 
+
+    <!-- College -->
     <bean class="com.naresh.College.College" id="College">
         <property name="collegeName" value="TMU"/>
         <property name="Address" value="Moradabad Up"/>
         <property name="collegeId" value="TCA2537046"/>
     </bean>
+
+
+    <!-- Read values from application.properties -->
+    <context:property-placeholder
+            location="classpath:application.properties"/>
+
+
+    <!-- DB User Details -->
+    <bean class="com.naresh.properties.DbUserDetails" id="details">
+        <property name="details">
+            <props>
+                <prop key="Url">${db.url}</prop>
+                <prop key="Username">${db.username}</prop>
+                <prop key="Password">${db.password}</prop>
+                <prop key="Port">${db.port}</prop>
+                <prop key="IsAdmin">${db.isAdmin}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="com.naresh.bfpp.CustomBFPP" id="customBFPP"/>
+    <bean class="com.naresh.bfpp.User" id="users">
+        <property name="name" value="satwik"/>
+        <property name="age" value="18"/>
+    </bean>
+
 </beans>
