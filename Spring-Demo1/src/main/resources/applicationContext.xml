@@ -154,6 +154,7 @@
                 <prop key="Password">${db.password}</prop>
                 <prop key="Port">${db.port}</prop>
                 <prop key="IsAdmin">${db.isAdmin}</prop>
+                <prop key="IsTrue">${db.isTrue}</prop>
             </props>
         </property>
     </bean>
