@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="user"-->
+<!--          class="com.satwik.spring3.model.User"-->
+<!--          p:name="Satwik"-->
+<!--          p:email="satwik@gmail.com"/>-->
+
+<!--    <bean id="userService"-->
+<!--          class="com.satwik.spring3.service.UserService"-->
+<!--          p:user-ref="user"/>-->
+
+<!--    <bean id="databaseInitializer"-->
+<!--          class="com.satwik.spring3.repository.DatabaseInitializer"-->
+<!--          init-method="init"/>-->
+<!--    <bean id="userFactory" class="com.satwik.spring3.factory.UserFactory"/>-->
+<!--    <bean id="userService" class="com.satwik.spring3.factory.UserFactory" factory-method="createUser2"/>-->
+
+    <bean id="userService" class="com.satwik.spring3.factory.UserFactoryBean"/>
+
+
+</beans>
