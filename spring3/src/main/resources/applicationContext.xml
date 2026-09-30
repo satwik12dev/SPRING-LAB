@@ -23,6 +23,10 @@
 <!--    <bean id="userService" class="com.satwik.spring3.factory.UserFactory" factory-method="createUser2"/>-->
 
     <bean id="userService" class="com.satwik.spring3.factory.UserFactoryBean"/>
+    <bean id="database" class="com.satwik.spring3.repository.DatabaseInitializer"
+          init-method="connecttodb"
+          destroy-method="closeConn"
+        />
 
 
 </beans>

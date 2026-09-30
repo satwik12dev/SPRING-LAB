@@ -8,8 +8,7 @@ public class User {
     private String name;
     private String email;
 
-    public User(){
-
+    public User() {
     }
 
     public User(String name, String email) {
@@ -34,6 +33,14 @@ public class User {
     }
 
     public void dis() {
-        System.out.println("Name:"+ name + " Email:" + email);
+        System.out.println("Name: " + name + " Email: " + email);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
