@@ -1,19 +1,26 @@
 package com.satwik.spring3.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class User {
 
+    private Integer id;
     private String name;
     private String email;
 
     public User() {
     }
 
-    public User(String name, String email) {
+    public User(Integer id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -32,14 +39,11 @@ public class User {
         this.email = email;
     }
 
-    public void dis() {
-        System.out.println("Name: " + name + " Email: " + email);
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
