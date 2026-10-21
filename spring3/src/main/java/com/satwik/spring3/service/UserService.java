@@ -4,6 +4,7 @@ import com.satwik.spring3.model.User;
 import com.satwik.spring3.repository.UserDetailsDAO;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,19 +18,19 @@ public class UserService {
         System.out.println("[Done]\tUser Service Created");
     }
 
-    // Create table
-    public void createTable() {
-        userDetailsDAO.createTable();
-    }
 
     // Create user
-    public void createUser(User user) {
-        userDetailsDAO.saveUser(user);
+    public boolean createUser(User user) {
+        return (1 == userDetailsDAO.saveUser(user));
     }
 
     // Get all users
     public List<User> getAllUsers() {
         return userDetailsDAO.getAllUsers();
+    }
+
+    public List<User> getSingleUser(){
+        return Collections.singletonList(userDetailsDAO.getSingleUser(1));
     }
 
     public void display() {
